@@ -242,7 +242,7 @@ scanf("%d", &Econs);
 if(Econs <=100 && Econs >=90)
 printf("A+ EXCELLENT\n");
 
-else if(Econs < 90 && Econs >=80)
+else if(Econs < 90 && Econs >=80) 
 printf("A- VERY GOOD\n");
 
 else if(Econs < 80 && Econs >=70)
