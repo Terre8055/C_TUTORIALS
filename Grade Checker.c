@@ -3,15 +3,58 @@
 int main(){
 
 int Maths, Science, Social, English, Geog, Govt, Emaths, Econs;
-int name;
+char name[200]; 
+int num1,num2,num3,choice;
+int num; 
 
 
 
+printf("WELCOME TO GRADE CHECKER APP\nENTER YOUR SECRET EXAM CODE\n");
+
+do
+{
+    /* code */
+    scanf("%d", &num);
+    printf("\nYour Token is %d\n", num);
+
+} while (num >=26);
+
+if(num <=25)
+
+printf("\nStudent login Successfully\nClick Continue to Check Grade\n");
 
 //input student name
-printf("Enter Student name\n");
 
-scanf("%c", &name);
+
+
+    printf("Enter your name: \n"); //name input from user
+    scanf("%s", &name);
+    printf("Hello Welcome to the Grade Checker app %s\n", name);
+
+    // Interface opens for input choice from user
+
+    printf("Enter\n 1 for Grade Checker \n 2 for Upload Assignments \n 3 for Download Student logs \n");
+    scanf("%d", &choice);
+
+    // input choice
+
+    switch(choice)
+    {
+        case 1:
+        printf("Welcome to the Grade Checker app %s\n", name);
+        break;
+
+        case 2:
+        printf("Carefully upload Assignment on Blackboard\n");
+        break;
+
+        case 3:
+        printf("Download student logs after paying fees\n");
+        break;
+
+        default:
+        printf("Enter a valid choice\n");
+    }
 
 printf("Enter Maths score\n");
 
@@ -268,4 +311,4 @@ printf("Your CWA = %d\n",(Maths+English+Social+Science+Emaths+Geog+Govt+Econs) /
 printf("Enjoy your vacation\n");
 
 return 0;
-}
+    }
