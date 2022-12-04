@@ -2,11 +2,15 @@
 
 int main(){
 
-int Maths, Science, Social, English, Geog, Govt, Emaths, Econs;
+int subject[8]; //store 8 variables as an array instead of listing them in multiples
 char name[200]; 
-int num1,num2,num3,choice;
-int num; 
-
+int num[4];//declared array to store 4 nums 
+int choice;
+int i;
+int token;
+//int CWA;
+int total_scores= 0;
+float avg;
 
 
 printf("WELCOME TO GRADE CHECKER APP\nENTER YOUR SECRET EXAM CODE\n");
@@ -14,12 +18,12 @@ printf("WELCOME TO GRADE CHECKER APP\nENTER YOUR SECRET EXAM CODE\n");
 do
 {
     /* code */
-    scanf("%d", &num);
-    printf("\nYour Token is %d\n", num);
+    scanf("%d", &token);
+    printf("\nYour Token is %d\n", token);
 
-} while (num >=26);
+} while (token >=26);
 
-if(num <=25)
+if(token <=25) 
 
 printf("\nStudent login Successfully\nClick Continue to Check Grade\n");
 
@@ -56,7 +60,34 @@ printf("\nStudent login Successfully\nClick Continue to Check Grade\n");
         printf("Enter a valid choice\n");
     }
 
-printf("Enter Maths score\n");
+    printf("\nEnter Scores in the following format\nScience\nMaths\nEnglish\nSocial\nGovt\nGeog\nEmaths\nEcons\n");
+    for(i=0; i < 8; i++){
+    scanf("%d", &subject[i]); //getting 8 subject scores
+    }
+
+    for(i = 0; i < 8; i++)
+    printf("Your scores are %d\n", subject[i]);
+    
+
+    for(i = 0; i < 8; i++)
+    {
+    total_scores = total_scores + subject[i];
+    }
+
+    avg = (total_scores / 8);
+    printf("Average is : %.2f\n", avg);
+
+    if(avg >= 50 && avg <=100)
+    printf("PASSED\n");
+
+    else if(avg < 50) 
+    printf("Failed\n");
+
+    else
+    printf("Enter Valid Scores to Check Grade\n");
+
+
+/*printf("Enter Maths score\n");
 
 //take score input from user
 
@@ -309,6 +340,6 @@ printf("Input a valid score: \n");
 printf("Your CWA = %d\n",(Maths+English+Social+Science+Emaths+Geog+Govt+Econs) / 8);
 
 printf("Enjoy your vacation\n");
-
+*/
 return 0;
     }
